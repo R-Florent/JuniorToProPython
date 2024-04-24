@@ -14,12 +14,12 @@ string_remove= input('entre number for remove input')
 string_remove_int = int(string_remove)
 taille_string = len(origanel_string)
 
-#if string_remove_int >= taille_string:
- #   print("Oops!  That was no valid number.  Try again...")
-try:[]
+if string_remove_int >= taille_string:
+    print("Oops!  That was no valid number.  Try again...")
+#try:[]
     print(origanel_string[0:string_remove_int])
-except Exception as e:
-    print(e)
+#except Exception as e:
+    print()
 
 
 """Solution """
