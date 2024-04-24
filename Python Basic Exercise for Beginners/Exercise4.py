@@ -10,9 +10,23 @@ Note: n must be less than the length of the string.
 
 """
 origanel_string = input('Enter wolrd')
-string_remove_int = input('entre number for remove input')
+string_remove= input('entre number for remove input')
+string_remove_int = int(string_remove)
 taille_string = len(origanel_string)
 
-for i in range(taille_string):
-    except string_remove_int => taille_string:
-        print("Oops!  That was no valid number.  Try again...")
+if string_remove_int >= taille_string:
+    print("Oops!  That was no valid number.  Try again...")
+print(origanel_string[0:string_remove_int])
+
+
+
+"""Solution """
+
+def remove_chars(word, n):
+    print('Original string:', word)
+    x = word[n:]
+    return x
+
+print("Removing characters from a string")
+print(remove_chars("pynative", 4))
+print(remove_chars("pynative", 2))
