@@ -1,11 +1,7 @@
-def reverse_world(Sentence):
-    list_sentence = Sentence.split()
+sample_list = [10, 20, 60, 30, 20, 40, 30, 60, 70, 80]
+new_list = []
 
-    list_sentence_reversed =  [i[::-1] for i in list_sentence]
-
-    res_str = " ".join(list_sentence_reversed)
-
-    return res_str
-
-str = "My Name is Jessa"
-print(reverse_world(str))
+for e in sample_list:
+    if sample_list.count(e) > 1 and e not in new_list :
+        new_list.append(e)
+print(new_list)
