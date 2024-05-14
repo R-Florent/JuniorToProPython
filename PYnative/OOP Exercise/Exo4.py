@@ -1,8 +1,8 @@
 from Exo1 import Vehicle
 
 class Bus(Vehicle):
-    def __init__(self, namebus, max_speed, mileage, capacity):
-        super().__init__(namebus, max_speed, mileage)
+    def __init__(self, namebus, max_speed, mileage, capacity ,color):
+        super().__init__(namebus, max_speed, mileage,color)
         self.capacity = capacity
 
     def Bus_info(self):
@@ -19,3 +19,4 @@ my_bus.info_vehicle()
 my_bus.return_capacity(my_bus.capacity)
 
 print(my_bus.seating_capacity(my_bus.capacity))
+print(my_bus.color)
