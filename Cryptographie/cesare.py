@@ -1,24 +1,21 @@
-code = "SyberagRfgYrCyhfOrnhMmMNnN"
+code = "FaxvrjtTbxYaPadwOaajIdMWaP"
+cle = [0, 15, 9, 4, 13, 100]
+reversed_key = [26- e for e in cle ]#
 
-def caesar_cipher(chaine):
+def caesar_cipher_key(chaine, key):
     ascii_chaine = [ord(c) for c in chaine]
     print("Le code ASCII est :", ascii_chaine)
+    result_chaine = ""
+    result = []
+    for i in range(len(chaine)):
 
-    for i in range(1, 27):
-        result = []
-        for c in chaine:
-            if 'a' <= c <= 'z':
-                result.append(chr((ord(c) - ord('a') + i) % 26 + ord('a')))
-            elif 'A' <= c <= 'Z':
-                result.append(chr((ord(c) - ord('A') + i) % 26 + ord('A')))
+        if 'a' <= chaine[i] <= 'z':
+            result.append(chr((ord(chaine[i]) - ord('a') + key[i%len(key)]) % 26 + ord('a')))
+        elif 'A' <= chaine[i] <= 'Z':
+            result.append(chr((ord(chaine[i]) - ord('A') + key[i%len(key)]) % 26 + ord('A')))
+    result_chaine = ''.join(result)
 
-        result_chaine = ''.join(result)
-        print(f"La phrase avec un décalage de {i} est : {result_chaine}")
+    print("le result est :", result_chaine)
 
 
-print("Code ASCII de 'a' :", ord("a"))
-print("Code ASCII de 'z' :", ord("z"))
-print("Code ASCII de 'A' :", ord("A"))
-print("Code ASCII de 'Z' :", ord("Z"))
-
-caesar_cipher(code)
+caesar_cipher_key(code, reversed_key)
