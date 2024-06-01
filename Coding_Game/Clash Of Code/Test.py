@@ -1,11 +1,15 @@
-input = "AB-AB-CAAB"
+import sys
+from math import *
 
-s =""
+nb = 126
+l =[]
+for i in range(2,nb):
+    l += [2**i]
+l = l [::-1]
 
-for e in input:
-    if e.isalpha():
-        s += str(ord(e) - ord('A'))
-    else :
-        s += str(e)
+for e in l:
+    if nb >= e :
+        print(e)
+        break
 
-print(s)
+print(l)

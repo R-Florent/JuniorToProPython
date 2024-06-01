@@ -14,21 +14,27 @@ def crible_eratosthene_GPT(n):
 def crible_eratosthene(n):
 
     prime = [i for i in range(2,n+1,1)]
+    a = 0
     for i in prime:
         if i*i <= n+1:
             for y in prime :
+                a += 1
                 if y!= i  and y%i == 0:
                     prime.remove(y)
-    print(prime)
+    print(a)
+    return prime
 
-crible_eratosthene(50)
+print(len(crible_eratosthene(1_000_000)))
+
 def crible_eratosthene_clem(n):
-
+    a = 0
     prime = [i for i in range(2, n + 1, 1)]
     for i in prime:
         if i * i <= n + 1:
-            prime = [e for e in prime if (e == i or e % i != 0)]
+            a += 1
+            prime = [e for e in prime if (e == i or e % i != 0) ]
 
-    print(prime)
+    print(a)
+    return prime
 
-crible_eratosthene_clem(50)
+#print(len(crible_eratosthene_clem(500)))
