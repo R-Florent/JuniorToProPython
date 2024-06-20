@@ -24,7 +24,7 @@ def crible_eratosthene(n):
     print(a)
     return prime
 
-print(len(crible_eratosthene(1_000_000)))
+print(len(crible_eratosthene_GPT(3_528)),crible_eratosthene_GPT(3_528))
 
 def crible_eratosthene_clem(n):
     a = 0
