@@ -39,5 +39,6 @@ for i in range(len(triangle_list_de_list)):
 
 
 print(local_max_sum[-1])
+
 #local_max_sum = triangle_list_de_list[0][0]+triangle_list_de_list[1][0]+triangle_list_de_list[2][0]+triangle_list_de_list[3][0]
 print(max_sum)
