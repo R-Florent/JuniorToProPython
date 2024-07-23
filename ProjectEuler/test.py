@@ -22,14 +22,22 @@ def nombres_abondants(limite=28123):
     return list_des_nombres_abondant
 
 def somme_all_nombres_abondants(table, limite=28123):
-    list_sum_nombres_abondants =[]
+    list_sum_nombres_abondants = set()
     for i in range(len(table)):
         for j in range(i, len(table)):  # Commence à i pour éviter les doublons
             somme = table[i] + table[j]
             if somme <= limite:
-                list_sum_nombres_abondants.append(somme)
+                list_sum_nombres_abondants.add(somme)
     return list_sum_nombres_abondants
 
 abondants = nombres_abondants()
 somme_abondants = somme_all_nombres_abondants(abondants)
-print(somme_abondants)
+
+print("je passe au gros")
+indise = 0
+somme =0
+for i in range(1, 28124):  # Inclure 28123
+    if i not in somme_abondants:
+        somme += i
+
+print(somme)
