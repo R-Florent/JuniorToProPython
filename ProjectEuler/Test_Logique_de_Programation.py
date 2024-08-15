@@ -1,7 +1,12 @@
-list = [1,2,3,4]
-list_multiple =[]
-for i in range(len(list)):
-    for y in range(i,len(list)):
-        list_multiple.append(list[i]+list[y])
+dividande = 1
+diviseur = 7
 
-print(list_multiple)
+restes = []
+while dividande != 0:
+    dividande = (dividande * 10) % diviseur
+    if dividande in restes:
+        print(f"Cycle détecté avec un reste de {dividande}")
+        break
+    restes.append(dividande)
+
+print("Les restes rencontrés : ", restes)
