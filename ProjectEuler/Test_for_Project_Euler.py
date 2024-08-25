@@ -1,23 +1,22 @@
-len_of_recurence_max = 0
+import math
 
-for diviseur in range(2,1000,1):
-    flag = True
-    len_of_recurence =0
-    dividande = 1%diviseur
+def is_prime(n):
+    for diviseur in range(2,int(math.sqrt(n)) + 1,2):
+        if n % diviseur == 0:
+            return False
+    return True
 
-    while flag == True:
-        reste = dividande % diviseur
-        dividande = reste*10
-        len_of_recurence += 1
-        if reste == dividande:
-            flag = False
+compteur = 0
+max_n =0
 
-        if reste ==0:
-            flag = False
+for a in range(-1000,1000):
+    for b in range (-1000,1000):
+        n = 0
+        suite = n**2+a*n+b
+        while is_prime(suite) == True:
+            suite = n**2+a*n+b
+            n +=1
+            print(n)
 
-    if len_of_recurence_max < len_of_recurence:
-        len_of_recurence_max = len_of_recurence
-
-    print(len_of_recurence)
-
-print(len_of_recurence_max)
+        if max_n < n:
+            max_n =n

@@ -1,12 +1,34 @@
-dividande = 1
-diviseur = 7
+import math
 
-restes = []
-while dividande != 0:
-    dividande = (dividande * 10) % diviseur
-    if dividande in restes:
-        print(f"Cycle détecté avec un reste de {dividande}")
-        break
-    restes.append(dividande)
 
-print("Les restes rencontrés : ", restes)
+def is_prime(n):
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+
+    for diviseur in range(3, int(math.sqrt(n)) + 1, 2):
+        if n % diviseur == 0:
+            return False
+    return True
+
+
+compteur = 0
+max_n = 0
+max_a=0
+max_b=0
+
+for a in range(-1000, 1001):
+    for b in range(-1000, 1001):
+        n = 0
+        while True:
+            suite = n * n + a * n + b
+            if suite <= 0 or not is_prime(suite):
+                break
+            n += 1
+
+            if max_n < n:
+                max_n = n
+                max_a = a
+                max_b = b
+print(max_n,max_b*max_a)
