@@ -1,34 +1,14 @@
-import math
+def puissance_5(n):
+    print(n ** 5)
+resulta =0
 
+for nombre in range(1633, 354294):
+    str_nombre = str(nombre)
+    somme_a_la_puissance = 0
+    for e in str_nombre:
+        somme_a_la_puissance += int(e) ** 5
+    if somme_a_la_puissance == nombre:
+        print(somme_a_la_puissance)
+        resulta += somme_a_la_puissance
 
-def is_prime(n):
-    if n == 2:
-        return True
-    if n % 2 == 0:
-        return False
-
-    for diviseur in range(3, int(math.sqrt(n)) + 1, 2):
-        if n % diviseur == 0:
-            return False
-    return True
-
-
-compteur = 0
-max_n = 0
-max_a=0
-max_b=0
-
-for a in range(-1000, 1001):
-    for b in range(-1000, 1001):
-        n = 0
-        while True:
-            suite = n * n + a * n + b
-            if suite <= 0 or not is_prime(suite):
-                break
-            n += 1
-
-            if max_n < n:
-                max_n = n
-                max_a = a
-                max_b = b
-print(max_n,max_b*max_a)
+print(resulta)
