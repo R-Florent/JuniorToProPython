@@ -19,7 +19,7 @@ for a in lexicographic:
                                                             for i in lexicographic:
                                                                 if i != a and i != b and i != c and i != d and i != e and i!=f and i!=h and i!=g and i!=h:
                                                                     for j in lexicographic:
-                                                                        if j != a and j != b and j != c and j != d and j != e and j!=f and j!=h and j!=g and j!=h and j !=i:
+                                                                         if j != a and j != b and j != c and j != d and j != e and j!=f and j!=h and j!=g and j!=h and j !=i:
                                                                             counter +=1
                                                                             if counter == 1_000_000:
                                                                                 print([a,b,c,d,e,f,g,h,i,j])
