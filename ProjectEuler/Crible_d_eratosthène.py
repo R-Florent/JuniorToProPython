@@ -1,5 +1,5 @@
 def crible_eratosthène_2026(n):
-    L = [True] * n+1
+    L = [True] * n
     L[0] = False
     L[1] = False
     for i in range(2,n):
@@ -8,4 +8,4 @@ def crible_eratosthène_2026(n):
                 L[j] = False
     return [e for e in range(n) if L[e]==True]
 
-print(crible_eratosthène_2026(50))
+print(crible_eratosthène_2026(120))
